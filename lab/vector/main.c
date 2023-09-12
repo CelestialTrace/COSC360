@@ -23,23 +23,25 @@ int main(){
    
     
     int64_t value;
-    Vector *v = vector_new_with_capacity(5);
+    Vector *v = vector_new_with_capacity(6);
+
     // Vector *v = vector_new();
-    vector_push(v, 11);   
+    vector_push(v, -11);   
     vector_push(v, 9);
     vector_push(v, 25);
-    vector_push(v, 3215);
+    vector_push(v, -3215);
     vector_push(v, 100);
+    vector_push(v, 255);
 
+    vector_insert(v, 5, 13);
+
+
+    vector_sort(v);
     print(v);
 
-    vector_insert(v, 5, 6);
 
-    vector_remove(v, 2);
-    print(v);
-
-
-    
+    int ver = vector_bsearch(v, 13);
+    printf("index: %d", ver);
 }
 
 //resize works on size
